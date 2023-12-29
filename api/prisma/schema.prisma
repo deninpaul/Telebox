@@ -1,0 +1,29 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator db {
+  provider  = "prisma-client-py"
+  interface = "sync"
+}
+
+model User {
+  id        Int       @id @unique
+  userName  String
+  fullName  String
+  files     File[]
+}
+
+model File {
+  id        String    @id @unique
+  name      String
+  size      String
+  type      String
+  path      String
+  createdAt DateTime  @default(now())
+  msgId     String
+  owner     User      @relation(fields: [ownerId], references: [id])
+  ownerId   Int       
+}
