@@ -2,3 +2,4 @@ flask
 prisma
 pyrogram
 tgcrypto
+python-dotenv

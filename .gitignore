@@ -1,0 +1,5 @@
+.env
+CDN*
+.vscode
+__pycache__
+.venv*
