@@ -3,3 +3,5 @@ prisma
 pyrogram
 tgcrypto
 python-dotenv
+requests
+colorlog

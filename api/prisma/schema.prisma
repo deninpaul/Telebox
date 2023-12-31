@@ -10,20 +10,21 @@ generator db {
 }
 
 model User {
-  id        Int       @id @unique
+  id        Int    @id @unique
   userName  String
   fullName  String
   files     File[]
 }
 
 model File {
-  id        String    @id @unique
+  id        String    @id @unique 
   name      String
-  size      String
+  size      Int
   type      String
   path      String
   createdAt DateTime  @default(now())
-  msgId     String
+  msgId     Int
+  thumbId   String
   owner     User      @relation(fields: [ownerId], references: [id])
   ownerId   Int       
 }

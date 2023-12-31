@@ -11,11 +11,12 @@ CREATE TABLE "User" (
 CREATE TABLE "File" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
-    "size" TEXT NOT NULL,
+    "size" INTEGER NOT NULL,
     "type" TEXT NOT NULL,
     "path" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "msgId" TEXT NOT NULL,
+    "msgId" INTEGER NOT NULL,
+    "thumbId" TEXT NOT NULL,
     "ownerId" INTEGER NOT NULL,
 
     CONSTRAINT "File_pkey" PRIMARY KEY ("id")
